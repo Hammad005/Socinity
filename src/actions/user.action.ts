@@ -54,4 +54,14 @@ export async function getUserByClerkId(clerkId: string) {
     } catch (error) {
         console.error("[GET USER BY CLERK ID ERROR]", error);
     }
-}
+};
+
+export async function getDbUserId() {
+    const { userId: clerkId } = await auth();
+    if (!clerkId) throw new Error("User not authenticated");
+
+    const user = await getUserByClerkId(clerkId);
+    if (!user) throw new Error("User not found");
+
+    return user.id;
+};
