@@ -115,7 +115,7 @@ const PostCard = ({ post, dbUserId }: { post: Post, dbUserId: string | null }) =
                             <Textarea
                                 readOnly
                                 value={post.content || ""}
-                                className="mt-2 w-fit h-fit text-sm text-foreground break-words resize-none border-none focus-visible:ring-0 p-0"
+                                className="mt-2 w-fit min-h-fit h-fit border-none p-0 text-sm text-foreground break-words resize-none  focus-visible:ring-0 m-0"
                             />
                         </div>
                     </div>
